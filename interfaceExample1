@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c_OOPS
+{   
+    interface I1
+    {
+        void test(int x, int y);// By default it is a public and abstract method so we do not need to use public and abstract key word in interface 
+    }
+    public class class1 : I1
+    {
+        public void test(int x, int y) {  // implimentation must be public for access the interface abstract method 
+        Console.WriteLine(x); Console.WriteLine(y);
+            
+        Console.WriteLine(x+y);
+        
+        }
+    }
+    class class2: I1 { 
+        public void test(int x, int y)
+        {
+
+           int mul = x*y;
+            Console.WriteLine(x +" AND  "+y);
+            Console.WriteLine(mul);
+
+        }
+    
+    }
+    internal class Program
+    {
+     
+        static void Main(string[] args)
+        {
+         class1 cl = new class1();  // class1 object 
+            class2 cl2 = new class2(); // class2 object 
+        cl.test(5,2);
+        cl2.test(9,7);
+           
+            Console.ReadLine();
+
+    }
+    }
+}
